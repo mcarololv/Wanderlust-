@@ -1,0 +1,132 @@
+header {
+    display: flex;  
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5vh;
+    margin-bottom: 3vh;
+
+    color: white;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 99;
+}
+
+header div {
+    display: flex;
+    flex: 1;
+
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 30vh;
+}
+
+header i {
+    margin-inline: 1vh;
+    font-size: 4vh;
+}
+
+header p {
+    font-size: 4vh;
+}
+
+header input {
+    padding: 1vh;
+    border-radius: 1vh;
+    outline: none;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 30vh;
+    color: black;
+}
+
+.pc {
+    display: flex;
+    flex: 1;
+}
+
+.mobile {
+    display: none;
+    flex: 0;
+    justify-content: flex-end;
+}
+
+.mobile i {
+    font-size: 5vh;
+}
+
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+
+    justify-content: start;
+
+    top: 0;
+    right: 0;
+
+    padding-top: 1.5vh;
+
+    width: 60%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    transition: 0.2s all;
+    z-index: 999;
+}
+
+.menu-mobile.active {
+    display: flex;
+}
+
+.menu-mobile div {
+    flex: 0;
+    width: 100%;
+}
+
+.menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    align-items: flex-start;
+
+    list-style: none;
+    padding: 0;
+
+    margin-top: 3vh;
+}
+
+.menu-mobile a {
+    width: 100%;
+    padding: 2vh;
+    border-block: 1px solid white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 780px) {
+    header {
+        padding: 1vh;
+    }
+    .pc {
+        display: none;
+        flex: 0;
+    }
+    
+    .mobile {
+        display: flex;
+        flex: 1;
+    }
+
+    .mobile i {
+        z-index: 9999;
+    }
+}

@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: rgb(0, 140, 255);
+}
+
+h1 {
+    font-size: 6vmin;
+    font-weight: bold;
+  margin-bottom: 5vh;
+}
+
+p {
+  font-weight: bold;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.collabsibles {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin: 4vh;
+}
+
+.wrap-collabsible {
+  margin-bottom: 1.2rem 0;
+  width: 60%;
+}
+
+@media screen and (max-width: 780px) {
+  .wrap-collabsible {
+    width: 90%;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  padding: 1rem;
+
+  cursor: pointer;
+
+  border-block: 1px solid white;
+
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle::before {
+  content: " ";
+  display: block;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid currentColor;
+  margin-top: 0.2rem;
+  margin-right: 0.7rem;
+  transform: translateY(-2px);
+
+  float: right;
+
+  transition: transform 0.2s ease-out;
+}
+
+.toggle {
+  align-self: flex-end;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, 0.2);
+  border-bottom: 1px solid rgba(250, 224, 66, 0.45);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 0.5rem 1rem;
+}
